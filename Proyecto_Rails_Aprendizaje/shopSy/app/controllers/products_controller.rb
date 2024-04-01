@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
     def index
         # @products -> Es una variable de instancia para poder usarla en el template
-        @products = Product.all
+        @products = Product.all.with.attached_photo
     end
 
         # [:id] -> id dinamico
@@ -10,7 +10,8 @@ class ProductsController < ApplicationController
     end
 
     def new
-        @product = Product.new
+        #@product = Product.new
+        product
     end
 
     def create
@@ -23,12 +24,13 @@ class ProductsController < ApplicationController
     end
 
     def edit
-        @product = Product.find(params[:id])
+        #@product = Product.find(params[:id])
+        product
     end
 
     def update
-        @product = Product.find(params[:id])
-        if @product.update(product_params)
+        #@product = Product.find(params[:id])
+        if product.update(product_params)
             redirect_to products_path, notice: 'Tu producto se ha actualizado'
         else
             render :edit, status: :unprocessable_entity 
@@ -37,14 +39,18 @@ class ProductsController < ApplicationController
 
 
     def destroy
-        @product = Product.find(params[:id])
-        @product.destroy
+        #@product = Product.find(params[:id])
+        product.destroy
         redirect_to products_path, notice: 'Tu producto se ha eliminado correctamente', status: :see_other
 
     end
 
     private 
     def product_params
-        params.require(:product).permit(:title,:description,:price)
+        params.require(:product).permit(:title,:description,:price, :photo)
+    end
+
+    def product
+        @product = Product.find(params[:id])
     end
 end
