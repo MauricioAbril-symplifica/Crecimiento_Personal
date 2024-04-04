@@ -5,4 +5,4 @@
 <span>$ <%= @product.price %></span>
 
 <%= link_to 'Editar Producto', edit_product_path(@product)%>
-<%= link_to 'Eliminar Producto', product_path(@product), data: {turbo: true, turbo_method: :delete, turbo_confirm: '¿Estás seguro?'} %>
+<%= link_to 'Eliminar Producto', product_path(@product), data: {turbo: true, turbo_method: :delete, turbo_confirm: t('common.confirm')} %>

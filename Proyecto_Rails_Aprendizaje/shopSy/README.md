@@ -83,3 +83,25 @@ rails db:migrate
  - Un partial son porciones de html que pueden ser reutilizadas en cualquiera de nuestras vistas. Todos los partials van con barra baja(_) al principio.
 
  Se colocan en donde se quiere compartir el codigo:  <%= render 'shared/header' %>v
+
+## CONFIG -> ARCHIVO APPLICATION.RB
+- En application.rb se declara toda la configuración de toda nuestra aplicación, desde ahí se declara que idiomas van aser permitidos en nuestra aplicación. 
+
+Se coloca el siguiente comando:
+
+````
+    config.i18n.available_locales = [:en, :es];
+````
+Donde i18n es la abreviatura para la internacionalización. En ruby los dos puntos se utilizan para denotar simbolos.
+
+Todas las traduciones van en la carpeta config/locales y ahi se crea un archivo con el nombre del lenguaje. EJ: es.yml o en.yml
+
+Para usar las traducciones en las vista se usa el siguiente formato:
+
+```
+<h2><%= t('.title')%></h2> -> La etiqueta html que renderiza,luego va la sintaxis de rails para mostrar alguna accion, se le coloca la t('.variable') que es la forma en que se sabe que se va a traducir
+```
+
+
+
+
