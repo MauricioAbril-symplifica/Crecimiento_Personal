@@ -101,6 +101,13 @@ Para usar las traducciones en las vista se usa el siguiente formato:
 ```
 <h2><%= t('.title')%></h2> -> La etiqueta html que renderiza,luego va la sintaxis de rails para mostrar alguna accion, se le coloca la t('.variable') que es la forma en que se sabe que se va a traducir
 ```
+## GENERAR TODO MODELO, VISTA Y CONTROLADOR 
+Se puede generar todo esto con un comando.
+
+```
+rails generate scaffold NombreDelModelo atributo:tipo de atributo
+```
+
 
 
 
