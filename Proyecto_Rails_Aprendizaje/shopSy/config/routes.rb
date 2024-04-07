@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   #get 'products/:id', to:'products#show', as: :product
   #get 'products/:id/edit', to:'products#edit', as: :edit_product
   resources :products, path: '/'
+
+  namespace :authentication, path: '', as: '' do
+    resources :users, only: [:new, :create]
+  end
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check

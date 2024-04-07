@@ -1,4 +1,6 @@
 en:
+  app_name: 'Sy Shop'
+  meta_title: 'Buy and Sell Products'
   activerecord:
   models:
     product: Product
@@ -23,6 +25,10 @@ en:
   shared:
     header:
       add: 'Add Product'
+  authentication:
+    users:
+      create:
+        created: 'Your Account has been created!'
   products:
     edit:
       title: 'Edit Product'
@@ -30,6 +36,13 @@ en:
       title: 'Add Product'
     index:
       title: 'Products'
+      all: 'All'
+      min_price: 'Min Price'
+      max_price: 'Max Price'
+      query_text: 'What do you want to search?'
+      expensive: 'Expensive First'
+      cheapest: 'Cheaper First'
+      newest: 'Recently Added'
     show:
       edit: 'Edit Product'
       delete: 'Delete Product'

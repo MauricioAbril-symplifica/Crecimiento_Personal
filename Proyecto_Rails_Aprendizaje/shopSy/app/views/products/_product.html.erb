@@ -2,7 +2,7 @@
     <div class="m-2">
         <h2 class=""><%= product.title %></h2>
         <p class="text-gray-500 text-sm mt-2"><%= product.description %></p>
-        <span class="font-bold text-xl"><%= product.price %>$</span>
+        <span class="font-bold text-xl">$<%= product.price %></span>
     </div>
     <%= image_tag product.photo.attached? ? product.photo : 'placeholder.jpg', class: "w-full h-60 object-cover" %>
 <% end %>

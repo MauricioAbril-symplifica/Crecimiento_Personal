@@ -1,4 +1,6 @@
 es:
+  app_name: 'Sy Shop'
+  meta_title: 'Compra y Vende Productos'
   activerecord:
     models:
       product: Producto
@@ -20,9 +22,23 @@ es:
               blank: 'no puede estar vacío'
   common:
     confirm: '¿Estás seguro?'
+  shared:
+    header:
+      add: 'Añadir Producto'
+  authentication:
+    users:
+      create:
+        created: 'Tu Cuenta ha sido creada!'
   products:
     index:
       title: 'Productos'
+      all: 'Todos'
+      min_price: 'Precio Mínimo'
+      max_price: 'Precio Máximo'
+      query_text: '¿Qué quieres buscar?'
+      expensive: 'Más Caros'
+      cheapest: 'Más Baratos'
+      newest: 'Añadidos Recientemente'
     new:
       title: 'Añadir Producto'
     edit:

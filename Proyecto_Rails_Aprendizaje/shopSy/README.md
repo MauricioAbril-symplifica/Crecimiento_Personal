@@ -13,8 +13,9 @@ Para crear este proyecto se corrieron los siguientes comandos:
 4. rails generate model (Nombre del modelo en singular) (Atributos...):(Tipo de dato)
 5. rails db:migrate  -> Migrar las tablas creadas a la base de datos escogida
 6. rails c (rails console) -> Abrir la consola de ruby y esto nos permite crear comandos a ejecutar para insertar datos o hacer modificaciones. -> Ejemplo: Modelo.create(atributos...:valor a insertar), Modelo.all (trae todo lo que tenemos en la base de datos con ese modelo)
-7. Para generar migraciones se coloca el siguiente comando: rails generate migration (nombre de la migración), luego de hacer la migracion y cambio en los archivos, ejecutar rails db:migrate
+7. Para generar migraciones se coloca el siguiente comando: rails generate migration (nombre de la migración) se tiene que crear cada vez que modifiquemos algo en la base de datos, luego de hacer la migracion y cambio en los archivos, ejecutar rails db:migrate
 8. rails active_storage:install
+9. Para limipiar la base de datos si todavia no tenemos información importante o de pruebas para que la migración no falle se usa este comando: rails db:reset
 
 
 
@@ -82,7 +83,15 @@ rails db:migrate
 
  - Un partial son porciones de html que pueden ser reutilizadas en cualquiera de nuestras vistas. Todos los partials van con barra baja(_) al principio.
 
- Se colocan en donde se quiere compartir el codigo:  <%= render 'shared/header' %>v
+ Se colocan en donde se quiere compartir el codigo:  <%= render 'shared/header' %>
+ #### GEMA
+ Una gema es una libreria de codigo escrito en ruby.
+
+ Se usa en este caso bundle add (nombre de la gema)
+
+ ## INITIALIZERS
+Es código que se va a ejecutar cuando se arranque la aplicación
+
 
 ## CONFIG -> ARCHIVO APPLICATION.RB
 - En application.rb se declara toda la configuración de toda nuestra aplicación, desde ahí se declara que idiomas van aser permitidos en nuestra aplicación. 
@@ -107,6 +116,23 @@ Se puede generar todo esto con un comando.
 ```
 rails generate scaffold NombreDelModelo atributo:tipo de atributo
 ```
+## GENERAR RELACIONES
+
+Se crea una migración, y se coloca despues del nombre de la migración la referencia de la tabla.
+
+EJ:
+
+````
+rails generate migra
+tion AddCategoryToProducts category:references
+````
+Luego de crear la migración se usa el comando para hacer los cambios en la base de datos rails db:migrate. Luego vamos a los modelo y colocamos como es la relación.
+
+````
+belongs_to :category -> En este caso decimos que un producto pertenece a una categoría
+
+has_many :products, dependent:  :restrict_with_exception -> En este caso el modelo category se dice que tiene varios productos, se coloca una accion que si se borra una categoria lance una excepción
+````
 
 
 
