@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+
+    skip_before_action :protect_pages, only: [:index, :show]
+
     def index
         @categories = Category.all.order(name: :asc)
         # @products -> Es una variable de instancia para poder usarla en el template
@@ -48,11 +51,12 @@ class ProductsController < ApplicationController
 
     def edit
         #@product = Product.find(params[:id])
-        product
+        authorize! product
     end
 
     def update
         #@product = Product.find(params[:id])
+        authorize! product
         if product.update(product_params)
             redirect_to products_path, notice: t('.updated')
         else
@@ -63,6 +67,7 @@ class ProductsController < ApplicationController
 
     def destroy
         #@product = Product.find(params[:id])
+        authorize! product
         product.destroy
         redirect_to products_path, notice: t('.destroyed'), status: :see_other
 
@@ -74,7 +79,7 @@ class ProductsController < ApplicationController
     end
 
     def product_params_index
-        params.permit(:category_id,:min_price,:max_price,:query_text,:order_by)
+        params.permit(:category_id,:min_price,:max_price,:query_text,:order_by, :page)
     end
 
     def product

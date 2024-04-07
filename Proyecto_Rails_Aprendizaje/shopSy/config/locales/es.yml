@@ -1,48 +1,70 @@
 es:
-  app_name: 'Sy Shop'
+  app_name: 'Shop Sy'
   meta_title: 'Compra y Vende Productos'
   activerecord:
     models:
       product: Producto
+      user: Usuario
+      category: Categoría
     attributes:
       product:
         title: 'Título'
         description: 'Descripción'
         price: 'Precio'
         photo: 'Foto'
-    errors:
-      models:
-        product:
-          attributes:
-            title:
-              blank: 'no puede estar vacío'
-            description:
-              blank: 'no puede estar vacía'
-            price:
-              blank: 'no puede estar vacío'
+      user:
+        email: 'Correo electrónico'
+        username: 'Usuario'
+        password: 'Contraseña'
+      category:
+        name: 'Nombre'
   common:
     confirm: '¿Estás seguro?'
+    back: 'Volver'
+    not_logged_in: 'Tienes que hacer login o crearte una cuenta'
+    not_authorized: 'No tienes permisos para esta acción'
+    not_found: 'No se ha encontrado'
   shared:
     header:
-      add: 'Añadir Producto'
+      add: 'Añadir producto'
+      login: 'Acceso'
+      register: 'Registro'
+      logout: 'Salir'
+      favorites: 'Mis favoritos'
   authentication:
     users:
       create:
-        created: 'Tu Cuenta ha sido creada!'
+        created: 'Tu cuenta se ha creado!'
+    sessions:
+      create:
+        created: 'Bienvenido!'
+        failed: 'Login inválido!'
+      destroy:
+        destroyed: 'Tu sesión ha terminado! Hasta la próxima'
   products:
-    index:
-      title: 'Productos'
-      all: 'Todos'
-      min_price: 'Precio Mínimo'
-      max_price: 'Precio Máximo'
-      query_text: '¿Qué quieres buscar?'
-      expensive: 'Más Caros'
-      cheapest: 'Más Baratos'
-      newest: 'Añadidos Recientemente'
-    new:
-      title: 'Añadir Producto'
     edit:
-      title: 'Editar Producto'
+      title: 'Editar producto'
+    new:
+      title: 'Añadir producto'
+    form:
+      title_placeholder: '¿Qué quieres vender?'
+      description_placeholder: '¿Puedes describir el producto?'
+      price_placeholder: '¿Cuánto cuesta?'
+      category_placeholder: '¿En qué categoría encaja mejor?'
+      submit: 'Véndelo!'
+    index:
+      title: 'Productos:'
+      all: 'Todos'
+      min_price: 'Precio mínimo'
+      max_price: 'Precio máximo'
+      query_text: '¿Qué quieres buscar?'
+      expensive: 'Más caros'
+      cheapest: 'Más barato'
+      newest: 'Añadidos recientemente'
+    show:
+      edit: 'Editar producto'
+      delete: 'Borrar producto'
+      view_more_products: 'Ver más productos de %{username}'
     create:
       created: 'Tu producto se ha creado correctamente'
     update:
@@ -65,4 +87,11 @@ es:
     destroy:
       destroyed: 'Tu categoría se ha eliminado correctamente'
     new:
-      title: 'Añadir categoría'    
+      title: 'Añadir categoría'
+  favorites:
+    index:
+      title: 'Mis favoritos'
+  user_mailer:
+    welcome:
+      subject: 'Bienvenido a Vendelo'
+      welcome_message: 'Hey %{username}, bienvenid@ a Vendelo. Esperemos que vendas un montón!'

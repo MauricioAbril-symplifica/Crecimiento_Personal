@@ -1,51 +1,70 @@
 en:
   app_name: 'Sy Shop'
-  meta_title: 'Buy and Sell Products'
+  meta_title: 'Buy and Sell Products!'
   activerecord:
-  models:
-    product: Product
-  attributes:
-    product:
-      title: 'Title'
-      description: 'Description'
-      price: 'Price'
-      photo: 'Photo'
-  errors:
     models:
+      product: Product
+      user: User
+      category: Category
+    attributes:
       product:
-        attributes:
-          title:
-            blank: "can't be blank"
-          description:
-            blank: "can't be blank"
-          price:
-            blank: "can't be blank"
+        title: 'Title'
+        description: 'Description'
+        price: 'Price'
+        photo: 'Photo'
+      user:
+        email: 'Email'
+        username: 'Username'
+        password: 'Password'
+      category:
+        name: 'Name'
   common:
     confirm: 'Are you sure?'
+    back: 'Go back'
+    not_logged_in: 'You have to login or create an account'
+    not_authorized: 'You don not have permissions for this action'
+    not_found: 'Not found'
   shared:
     header:
-      add: 'Add Product'
+      add: 'Add product'
+      login: 'Login'
+      register: 'Register'
+      logout: 'Logout'
+      favorites: 'My favorites'
   authentication:
     users:
       create:
-        created: 'Your Account has been created!'
+        created: 'Your account has been created!'
+    sessions:
+      create:
+        created: 'Welcome!'
+        failed: 'Invalid login!'
+      destroy:
+        destroyed: 'Session ended. Bye!'
   products:
     edit:
-      title: 'Edit Product'
+      title: 'Edit product'
     new:
-      title: 'Add Product'
+      title: 'Add product'
+    form:
+      title_placeholder: 'What do you want to sell?'
+      description_placeholder: 'Could you describe your product?'
+      price_placeholder: 'For how much?'
+      category_placeholder: 'In what category could fit better?'
+      submit: 'Sell it now!'
     index:
       title: 'Products'
       all: 'All'
-      min_price: 'Min Price'
-      max_price: 'Max Price'
+      min_price: 'Min price'
+      max_price: 'Max price'
       query_text: 'What do you want to search?'
-      expensive: 'Expensive First'
-      cheapest: 'Cheaper First'
-      newest: 'Recently Added'
+      expensive: 'Expensive first'
+      cheapest: 'Cheaper first'
+      newest: 'Recently added'
     show:
-      edit: 'Edit Product'
-      delete: 'Delete Product'
+      edit: 'Edit product'
+      delete: 'Delete product'
+      view_more_products: 'View more products by %{username}'
     create:
       created: 'Your product has been successfully created'
     update:
@@ -69,3 +88,10 @@ en:
       destroyed: 'Your category has been successfully destroyed'
     new:
       title: 'New category'
+  favorites:
+    index:
+      title: 'My favorites'
+  user_mailer:
+    welcome:
+      subject: 'Welcome to SellIT'
+      welcome_message: 'Hey %{username}, welcome to SellIT. We hope you sell a lot!'

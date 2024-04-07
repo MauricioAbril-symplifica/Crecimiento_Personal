@@ -9,11 +9,13 @@ class User < ApplicationRecord
     validates :username, presence: true, uniqueness: true,
       length: { in: 3..15 },
       format: {
-        with: /\A[a-z-0-9-A-Z]+\z/,
+        with: /\A[a-z0-9A-Z]+\z/,
         message: :invalid
       }
     validates :password, length: { minimum: 6 }
     
+    has_many :products, dependent: :destroy
+
     #Callback antes de que se guarde se coloque todo en minusculas
     before_save :downcase_attributes
   

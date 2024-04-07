@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :categories, except: :show
+  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   
   #delete 'products/:id', to: 'products#destroy'
@@ -9,11 +9,17 @@ Rails.application.routes.draw do
   #get '/products', to: 'products#index'
   #get 'products/:id', to:'products#show', as: :product
   #get 'products/:id/edit', to:'products#edit', as: :edit_product
-  resources :products, path: '/'
+  
 
   namespace :authentication, path: '', as: '' do
-    resources :users, only: [:new, :create]
+    resources :users, only: [:new, :create], path: '/register', path_names: { new: '/' }
+    resources :sessions, only: [:new, :create, :destroy], path: '/login', path_names: { new: '/' }
   end
+
+  resources :categories, except: :show
+  resources :products, path: '/'
+
+
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
