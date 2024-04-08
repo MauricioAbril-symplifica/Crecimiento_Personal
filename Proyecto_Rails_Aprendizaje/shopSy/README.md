@@ -139,6 +139,18 @@ belongs_to :category -> En este caso decimos que un producto pertenece a una cat
 has_many :products, dependent:  :restrict_with_exception -> En este caso el modelo category se dice que tiene varios productos, se coloca una accion que si se borra una categoria lance una excepción
 ````
 
+## INSTALAR TAILWIND 
+
+Para instalar tailwindcss se corre el siguiente comando:
+
+```
+bundle add tailwindcss-rails
+rails tailwindcss:install  
+```
+
+luego ya para correr el proyecto no usamos rails s sino bin/dev
+
+
 
 
 
