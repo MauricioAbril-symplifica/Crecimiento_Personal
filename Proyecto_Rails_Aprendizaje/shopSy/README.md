@@ -89,6 +89,11 @@ rails db:migrate
 
  Se usa en este caso bundle add (nombre de la gema)
 
+ #### TURBO
+ Turbo es una herramienta desarrollada por Basecamp que se integra con Ruby on Rails. Turbo agrega funcionalidades avanzadas de interacción enriquecida al motor de Rails, permitiendo construir aplicaciones web modernas y dinámicas sin necesidad de utilizar frameworks de JavaScript complejos.
+
+ Turbo en Rails es una interfaz para trabajar con las funcionalidades de Turbo y aprovechar al máximo las capacidades de interacción enriquecida que ofrece esta herramienta en el desarrollo de aplicaciones web con Rails.
+
  ## INITIALIZERS
 Es código que se va a ejecutar cuando se arranque la aplicación
 

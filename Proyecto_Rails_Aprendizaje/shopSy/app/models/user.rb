@@ -15,6 +15,7 @@ class User < ApplicationRecord
     validates :password, length: { minimum: 6 }
     
     has_many :products, dependent: :destroy
+    has_many :favorites, dependent: :destroy
 
     #Callback antes de que se guarde se coloque todo en minusculas
     before_save :downcase_attributes
