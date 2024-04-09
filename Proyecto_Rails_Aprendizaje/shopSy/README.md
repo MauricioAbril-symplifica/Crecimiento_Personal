@@ -48,7 +48,7 @@ EJ:
 ```
 class EjemploSy < ApplicationController 
     def index
-        (Iría la vista)
+        Logica de lo que se hace
     end
 end
 ```

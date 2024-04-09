@@ -68,7 +68,6 @@ Los números (tipo number) son los datos más básicos que podemos representar e
 
     - Arrays
     - Objects
-    - Functions
 
 
 Todo en Javascript que no sea un valor primitivo es un objeto.
