@@ -14,7 +14,7 @@ Para crear este proyecto se corrieron los siguientes comandos:
 5. rails db:migrate  -> Migrar las tablas creadas a la base de datos escogida
 6. rails c (rails console) -> Abrir la consola de ruby y esto nos permite crear comandos a ejecutar para insertar datos o hacer modificaciones. -> Ejemplo: Modelo.create(atributos...:valor a insertar), Modelo.all (trae todo lo que tenemos en la base de datos con ese modelo)
 7. Para generar migraciones se coloca el siguiente comando: rails generate migration (nombre de la migración) se tiene que crear cada vez que modifiquemos algo en la base de datos, luego de hacer la migracion y cambio en los archivos, ejecutar rails db:migrate
-8. rails active_storage:install
+8. rails active_storage:install -> Genera una migración (Crea una tabla donde se van a almacenar todas las rutas de los archivos que subamos ( no guardamaos los archvios en nuestra base de datos como tal) sino las rutas donde estan alojados)
 9. Para limipiar la base de datos si todavia no tenemos información importante o de pruebas para que la migración no falle se usa este comando: rails db:reset
 
 
